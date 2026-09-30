@@ -1,0 +1,25 @@
+﻿@page
+@model parcial1.Pages.Productos.BajaModel
+@{
+    ViewData["Title"] = "Baja de productos";
+}
+<h1>Baja de productos</h1>
+@if(Model.Mensaje != null) {<div class="alerta ok">@Model.Mensaje</div>}
+<form method="post" onsubmit="return confirm('Esta seguro que desea eliminar los productos seleccionados?');">
+    <table class="tabla">
+        <thead><tr><th><th>ID</th><th>Nombre</th><th>Precio</th><th>Categoria</th></tr></thead>
+        <tbody>
+            @foreach(var p in Model.Productos)
+            {
+                <tr>
+                    <td><input type="checkbox" name="Seleccionados"value="@p.IdProducto"/></td>
+                    <td>@p.IdProducto<td>@p.Nombre</td>
+                    <td>@p.Precio.ToString("C2", new System.Globalization.CultureInfo("es-AR"))</td><td>@p.Categoria</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn rojo">Eliminar seleccionados</button>
+</form>
+<a asp-page = "/Index" class="volver"> Volver a la pagina principal</a>

@@ -1,0 +1,10 @@
+﻿@page
+@{ViewData["Title"] = "Inicio"; }
+<h1>Panel de administracion</h1>
+<p class="sub">Elegi una operacion</p>
+<div class="menu">
+    <a asp-page="/Productos/Alta" class="tarjeta verde"> + <span>Alta de producto</span></a>
+    <a asp-page="/Productos/Consulta" class="tarjeta azul"> <span>Consulta</span></a>
+    <a asp-page="/Productos/Modificar" class="tarjeta naranja"> <span>Modificacion</span></a>
+    <a asp-page="/Productos/Baja" class="tarjeta rojo"> <span>Baja de producto</span></a>
+</div>

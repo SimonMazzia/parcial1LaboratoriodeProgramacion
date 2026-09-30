@@ -1,0 +1,16 @@
+﻿@page
+@model parcial1.Pages.Productos.ConsultaModel
+@{
+    ViewData["Title"] = "Consulta de productos";
+}
+<h1>Listado de productos</h1>
+<table class="tabla">
+    <thead><tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Categorias</th></tr></thead>
+    <tbody>
+        @foreach(var p in Model.Productos)
+        {
+            <tr><td>@p.IdProducto</td><td>@p.Nombre</td><td>@p.Precio.ToString("C2",new System.Globalization.CultureInfo("es-AR"))</td><td>@p.Categoria</td></tr>
+        }
+    </tbody>
+</table>
+<a asp-page="/Index" class="volver">Volver a la pagina principal</a>
